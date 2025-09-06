@@ -12,7 +12,4 @@ Repo này chứa các bài tập, code và tài liệu liên quan đến môn **
 - Vi điều khiển: STM32 / Arduino / ESP32 (tùy bài)
 - IDE: Keil C, STM32CubeIDE, Arduino IDE, VS Code
 
-## 🚀 Cách sử dụng
-1. Clone repo về máy:
-   ```bash
-   git clone: https://github.com/buihongquan1110-svg/embedded-systems
+https://github.com/buihongquan1110-svg/embedded-systems
