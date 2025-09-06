@@ -15,4 +15,4 @@ Repo này chứa các bài tập, code và tài liệu liên quan đến môn **
 ## 🚀 Cách sử dụng
 1. Clone repo về máy:
    ```bash
-   git clone https://github.com/buihongquan1110-svg/embedded-systems.git
+   git clone: https://github.com/buihongquan1110-svg/embedded-systems
