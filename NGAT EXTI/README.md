@@ -29,6 +29,8 @@ Chọn PA0 làm chân ngắt ngoài.
 Kích hoạt ngắt cạnh Falling Edge (nhấn nút kéo xuống GND).
 Bật NVIC cho EXTI0.
 <img width="786" height="450" alt="image" src="https://github.com/user-attachments/assets/e198670a-584e-40ea-89c8-192826602ae5" />
+
+
 Hàm ISR.
 <img width="663" height="174" alt="image" src="https://github.com/user-attachments/assets/5b5aded9-7657-4122-a864-ad12709e55be" />
 # 3. CẤU HÌNH TIMER2.
@@ -36,8 +38,12 @@ Prescaler: 7199 → mỗi 1 ms đếm tăng 1.
 Period: 5000 → tràn sau 5000 ms (≈ 1 Hz).
 Kích hoạt ngắt Timer2 trong NVIC.
 <img width="713" height="479" alt="image" src="https://github.com/user-attachments/assets/b9786ea2-83d5-48f0-bbf1-6d71e42537d1" />
+
+
+
 Hàm ISR.
 <img width="708" height="114" alt="image" src="https://github.com/user-attachments/assets/690e85dc-c52d-48fa-a5b7-4076f25ba16a" />
+
 # 4. KẾT QUẢ.
 - LED PB0: Nhấp nháy tự động 1 Hz (nhờ Timer2).
 - LED PB1: Đảo trạng thái mỗi khi nhấn nút (nhờ ngắt ngoài EXTI0).
