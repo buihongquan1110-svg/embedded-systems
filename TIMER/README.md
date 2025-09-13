@@ -1,8 +1,8 @@
 
 # BÀI TẬP VỀ SỬ DỤNG TIMER ĐỂ LẬP TRÌNH - MÔN HỆ THỐNG NHÚNG PTIT.
-"- Cấu hình một Timer ở chế độ cơ bản, sử dụng Timer để tạo hàm Delay đạt độ chính xác cao.
+- Cấu hình một Timer ở chế độ cơ bản, sử dụng Timer để tạo hàm Delay đạt độ chính xác cao.
 - Cấu hình một timer cơ bản để tạo ngắt mỗi 500ms. Trong ISR của timer, đảo trạng thái của LED LD2. Kết quả là LED nhấp nháy với chu kỳ 1000ms.
-- Có thể dùng máy hiện sóng, Logic Analyzer để đánh giá tính chính xác của Timer."
+- Có thể dùng máy hiện sóng, Logic Analyzer để đánh giá tính chính xác của Timer.
 
 # 1. GIỚI THIỆU.
 - Chương trình minh họa:
