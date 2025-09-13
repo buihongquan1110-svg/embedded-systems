@@ -45,6 +45,7 @@ File startup_stm32f10x.s, system_stm32f10x.c (SystemCoreClock phải chính xác
 # 4. KẾT QUẢ.
 - LED PB0: Nhấp nháy tự động 1 Hz (nhờ Timer2).
 - LED PB1: Đảo trạng thái mỗi khi nhấn nút (nhờ ngắt ngoài EXTI0).
+- Link video demo: https://drive.google.com/drive/folders/1mIw8qjgAAk2u-UoI90dkcp-4Y8v8VRSF
 
 
 
