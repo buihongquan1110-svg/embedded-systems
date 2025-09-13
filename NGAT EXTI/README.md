@@ -32,6 +32,7 @@ File startup_stm32f10x.s, system_stm32f10x.c (SystemCoreClock phải chính xác
 
 - Hàm ISR.
 <img width="663" height="174" alt="image" src="https://github.com/user-attachments/assets/5b5aded9-7657-4122-a864-ad12709e55be" />
+
 # 3. CẤU HÌNH TIMER2.
 - Prescaler: 7199 → mỗi 1 ms đếm tăng 1.
 - Period: 5000 → tràn sau 5000 ms (≈ 1 Hz).
