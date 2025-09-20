@@ -64,6 +64,8 @@ Giải thích:
 
 # Bước 6 — Bật ngắt khi có dữ liệu (RXNE).
 <img width="532" height="51" alt="image" src="https://github.com/user-attachments/assets/fa48d425-ff56-4b51-ad29-577209b478b5" />
+
+
 - Giải thích: Khi có byte nhận xong, cờ RXNE sẽ set và gây ngắt vào USART1_IRQHandler.
 
 # Bước 7 — Cấu hình NVIC cho USART1.
@@ -86,7 +88,7 @@ Giải thích:
 # KẾT QUẢ.
 - Khi STM32 khởi động, terminal hiển thị:
 
-Hello from STM32!
+    "Hello from STM32!"
 
 - Gõ ON → LED PC13 sáng (GPIO_ResetBits).
 
@@ -94,7 +96,7 @@ Hello from STM32!
 
 - Nếu nhập sai lệnh → terminal phản hồi:
 
-Unknown command
+    "Unknown command"
 
 - LED hoạt động đúng theo lệnh từ người dùng qua UART.
 - Link demo: https://drive.google.com/drive/folders/128JQ7NboFaNV9Mmz9hb6a1gLwqTgti3s
