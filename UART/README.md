@@ -36,3 +36,14 @@ Yêu cầu:
 - Thêm file startup (startup_stm32f10x.s) và các file thư viện StdPeriphLib vào project.
 
 - Đảm bảo include path trỏ đến thư mục headers của StdPeriphLib.
+
+# Bước 2 — Bật clock cho ngoại vi cần dùng.
+<img width="608" height="127" alt="image" src="https://github.com/user-attachments/assets/afc4e52c-1371-4629-a11e-63407f9acc61" />
+Giải thích:
+
+- USART1 nằm trên APB2, cần bật.
+
+- GPIOA để cấu hình PA9/PA10.
+
+- AFIO để cho phép chế độ alternate function.
+
