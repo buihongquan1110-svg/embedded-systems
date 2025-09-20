@@ -41,3 +41,36 @@ Phần mềm:
 - STM32 Standard Peripheral Library (STM32F10x_StdPeriph_Driver).
 
 - Serial Monitor (Hercules, Tera Term, PuTTY, …).
+
+
+# CÁC BƯỚC THỰC HIỆN.
+# Bước 1 — Bật clock cho GPIOB và I2C1.
+- Để GPIOB (PB6, PB7) và ngoại vi I2C1 hoạt động, cần bật clock:
+<img width="619" height="77" alt="image" src="https://github.com/user-attachments/assets/b3d5ff75-f135-41ff-8bcd-a89972dfc8b8" />
+
+# Bước 2 — Cấu hình chân PB6 (SCL) và PB7 (SDA).
+- Cả 2 chân cần để chế độ Alternate Function Open-Drain.
+
+- Open-drain cho phép nhiều thiết bị chia sẻ bus I2C.
+<img width="564" height="118" alt="image" src="https://github.com/user-attachments/assets/9fd356c5-8445-4932-99aa-27836eaffe00" />
+
+# Bước 3 — Khởi tạo I2C1 ở chế độ master.
+- Tốc độ: 100 kHz (chuẩn I2C).
+
+- Địa chỉ master có thể đặt 0x00 vì không dùng.
+<img width="743" height="193" alt="image" src="https://github.com/user-attachments/assets/90cb415b-a44c-4c69-876f-aedda82dd9db" />
+
+# Bước 4 — Hàm ghi dữ liệu qua I2C (Master → Slave).
+* Các bước con:
+- Kiểm tra bus rảnh.
+
+- Gửi tín hiệu START.
+
+- Gửi địa chỉ slave + chế độ ghi.
+
+- Gửi từng byte dữ liệu.
+
+- Kết thúc bằng STOP.
+
+
+
