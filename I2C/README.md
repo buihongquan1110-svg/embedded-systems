@@ -61,7 +61,7 @@ Phần mềm:
 <img width="743" height="193" alt="image" src="https://github.com/user-attachments/assets/90cb415b-a44c-4c69-876f-aedda82dd9db" />
 
 # Bước 4 — Hàm ghi dữ liệu qua I2C (Master → Slave).
-* Các bước con:
+# Các bước con:
 - Kiểm tra bus rảnh.
 
 - Gửi tín hiệu START.
@@ -71,6 +71,44 @@ Phần mềm:
 - Gửi từng byte dữ liệu.
 
 - Kết thúc bằng STOP.
+<img width="907" height="382" alt="image" src="https://github.com/user-attachments/assets/48088991-4766-4d16-be9e-d5a96d423a7f" />
+
+# Bước 5 — Hàm đọc dữ liệu qua I2C (Slave → Master).
+- Kiểm tra bus rảnh.
+
+- Gửi tín hiệu START.
+
+- Gửi địa chỉ slave + chế độ đọc.
+
+- Đọc từng byte, ACK cho đến byte cuối cùng thì NACK + STOP.
+<img width="948" height="490" alt="image" src="https://github.com/user-attachments/assets/24ecfaf5-8dec-4a8a-9637-3383b99a3e42" />
+
+# Bước 6 — Khởi tạo cảm biến AHT10.
+- Gửi lệnh 0xE1, 0x08, 0x00.
+
+- Chờ cảm biến sẵn sàng.
+<img width="517" height="144" alt="image" src="https://github.com/user-attachments/assets/f4e489b8-9f73-471b-ac60-ce01d59d71de" />
+
+# Bước 7 — Đọc dữ liệu từ AHT10.
+- Gửi lệnh đo 0xAC, 0x33, 0x00.
+
+- Đọc về 6 byte dữ liệu.
+
+- Giải mã ra nhiệt độ & độ ẩm.
+<img width="1070" height="416" alt="image" src="https://github.com/user-attachments/assets/cadecf3f-d0c0-4f74-99b3-f0ae23c068cf" />
+
+
+# KẾT QUẢ.
+- Sau khi chạy code, terminal UART sẽ hiển thị:
+  `"Init AHT10...
+  Temp: 27.85 C, Humi: 63.20 %"`
+- Nếu cảm biến chưa sẵn sàng hoặc có lỗi giao tiếp:
+  `"Read error!"`
+
+
+
+
+
 
 
 
