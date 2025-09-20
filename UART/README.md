@@ -27,3 +27,12 @@ Yêu cầu:
 - Bộ USB‑TTL (3.3V!) để nối với UART (hoặc module phù hợp). Không dùng 5V TTL.
 
 - Kết nối dây: chung GND giữa board và USB‑TTL.
+
+
+# CÁC BƯỚC THỰC HIỆN.
+# Bước 1 — Tạo project & thêm StdPeriphLib.
+- Tạo project mới cho STM32F103.
+
+- Thêm file startup (startup_stm32f10x.s) và các file thư viện StdPeriphLib vào project.
+
+- Đảm bảo include path trỏ đến thư mục headers của StdPeriphLib.
