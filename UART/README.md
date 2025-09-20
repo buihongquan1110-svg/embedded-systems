@@ -39,6 +39,8 @@ Yêu cầu:
 
 # Bước 2 — Bật clock cho ngoại vi cần dùng.
 <img width="608" height="127" alt="image" src="https://github.com/user-attachments/assets/afc4e52c-1371-4629-a11e-63407f9acc61" />
+
+
 Giải thích:
 
 - USART1 nằm trên APB2, cần bật.
