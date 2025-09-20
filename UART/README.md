@@ -18,12 +18,12 @@ Mục tiêu chính:
 + Cung cấp nền tảng để phát triển các ứng dụng giao tiếp UART phức tạp hơn (ví dụ: giao tiếp module GPS, ESP8266, máy tính...).
 
 Yêu cầu:
-Board phát triển chứa MCU STM32F103 (F103C8 / F103RB...).
+- Board phát triển chứa MCU STM32F103 (F103C8 / F103RB...).
 
-Thư viện STM32 Standard Peripheral Library (StdPeriphLib) đã được thêm vào project.
+- Thư viện STM32 Standard Peripheral Library (StdPeriphLib) đã được thêm vào project.
 
-Trình biên dịch / IDE: Keil uVision / STM32CubeIDE / TrueSTUDIO (hướng dẫn chung, không cụ thể IDE).
+- Trình biên dịch / IDE: Keil uVision / STM32CubeIDE / TrueSTUDIO (hướng dẫn chung, không cụ thể IDE).
 
-Bộ USB‑TTL (3.3V!) để nối với UART (hoặc module phù hợp). Không dùng 5V TTL.
+- Bộ USB‑TTL (3.3V!) để nối với UART (hoặc module phù hợp). Không dùng 5V TTL.
 
-Kết nối dây: chung GND giữa board và USB‑TTL.
+- Kết nối dây: chung GND giữa board và USB‑TTL.
