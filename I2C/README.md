@@ -13,6 +13,9 @@ Mục tiêu chính:
 - Kết hợp với USART1 để gửi kết quả ra terminal.
 
 Yêu cầu: 
+
+
+
 Phần cứng: 
 
 - STM32F103C8T6 (Blue Pill hoặc board tương tự).
