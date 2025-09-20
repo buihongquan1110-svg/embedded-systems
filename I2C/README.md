@@ -100,10 +100,18 @@ Phần mềm:
 
 # KẾT QUẢ.
 - Sau khi chạy code, terminal UART sẽ hiển thị:
+
+
+
   `"Init AHT10...
   Temp: 27.85 C, Humi: 63.20 %"`
 - Nếu cảm biến chưa sẵn sàng hoặc có lỗi giao tiếp:
+
+
+
   `"Read error!"`
+
+- Link demo: https://drive.google.com/drive/folders/1XAlh0h26rjGkeRsKohkdTcqQzBkCd6Us
 
 
 
