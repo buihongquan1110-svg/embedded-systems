@@ -94,17 +94,14 @@ Giải thích:
 # KẾT QUẢ.
 - Khi STM32 khởi động, terminal hiển thị:
 
-`"Hello from STM32!"`
-
-
+   `"Hello from STM32!"`
 - Gõ ON → LED PC13 sáng (GPIO_ResetBits).
 
 - Gõ OFF → LED PC13 tắt (GPIO_SetBits).
 
 - Nếu nhập sai lệnh → terminal phản hồi:
 
- `"Unknown command"`
-
+   `"Unknown command"`
 - LED hoạt động đúng theo lệnh từ người dùng qua UART.
 - Link demo: https://drive.google.com/drive/folders/128JQ7NboFaNV9Mmz9hb6a1gLwqTgti3s
 
