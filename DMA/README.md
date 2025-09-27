@@ -72,6 +72,40 @@ Phần mềm:
 
 <img width="893" height="648" alt="image" src="https://github.com/user-attachments/assets/6307a813-7c1a-4642-bf36-245248fc7da5" />
 
+# BƯỚC 4 - CẤU HÌNH NVIC CHO DMA1 CHANNEL1.
+<img width="556" height="188" alt="image" src="https://github.com/user-attachments/assets/405b682c-40f5-4ab0-8d46-b42ddedee85a" />
+
+# BƯỚC 5 - XỬ LÝ TRONG NGẮT DMA.
+- Khi DMA chuyển xong buffer, ISR được gọi.
+
+- In toàn bộ giá trị trong ADC_Buffer[] ra UART.
+<img width="695" height="312" alt="image" src="https://github.com/user-attachments/assets/e5d6c024-221d-48e8-87fa-8adb2c2f31df" />
+
+# BƯỚC 6 - HÀM MAIN().
+<img width="604" height="235" alt="image" src="https://github.com/user-attachments/assets/09f38436-d1f6-444d-95fa-a0f4e9441042" />
+
+
+# KẾT QUẢ.
+- Khi chạy chương trình và mở PuTTY (baudrate 9600), ta thấy:
+  `"DMA ADC Test Start..."`
+  `"ADC[0] = 1234"`
+  `"ADC[1] = 1250"`
+  `"..."`
+  `"ADC[15] = 1245"`
+  `"==== DMA Transfer Done ===="`
+  `"ADC[0] = 1238"`
+  `"ADC[1] = 1249"`
+  `"..."`
+- Các giá trị ADC thay đổi khi chỉnh biến trở ở chân PA0.
+
+- Dữ liệu được in theo block 16 mẫu.
+
+- CPU không phải polling ADC → tiết kiệm tài nguyên.
+- Link demo: https://drive.google.com/drive/folders/1pf4whpV21QYv3LjWGlQqkDO7WXeCyIqj.
+
+
+
+
 
 
 
