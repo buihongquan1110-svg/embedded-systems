@@ -113,7 +113,9 @@ Vì thế trên PuTTY (hoặc TeraTerm) bạn sẽ thấy dữ liệu chạy li�
   `"ADC = 2048, Voltage = 1650 mV"`
  
   
-  ...
+  `"..."`
+
+  Link demo: https://drive.google.com/drive/folders/13jvTQcvnJauJRhwzH336IOHOwvw096SZ
   
   
   
