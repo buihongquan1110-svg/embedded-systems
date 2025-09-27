@@ -48,6 +48,9 @@ Phần mềm:
 
 - Baudrate = 9600, 8N1.
 <img width="884" height="552" alt="image" src="https://github.com/user-attachments/assets/84d751b8-4014-4794-94bd-a98c4100e333" />
+
+
+
 - Hàm gửi dữ liệu qua USART:
 <img width="688" height="223" alt="image" src="https://github.com/user-attachments/assets/fe35295c-d7df-4b0c-9fce-29db5f52ff5f" />
 
