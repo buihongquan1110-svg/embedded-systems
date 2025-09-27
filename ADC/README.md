@@ -102,10 +102,19 @@ Delay một chút rồi lặp lại
 Vì thế trên PuTTY (hoặc TeraTerm) bạn sẽ thấy dữ liệu chạy liên tục, kiểu:
 
   `"ADC = 512, Voltage = 412 mV"`
+
+  
   `"ADC = 1024, Voltage = 825 mV"`
+
+  
   `"ADC = 1536, Voltage = 1237 mV"`
+
+  
   `"ADC = 2048, Voltage = 1650 mV"`
+ 
+  
   ...
+  
   
   
   
