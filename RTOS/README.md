@@ -31,6 +31,7 @@ Thư viện: HAL + CMSIS-RTOS v1 (FreeRTOS)
 <img width="930" height="165" alt="image" src="https://github.com/user-attachments/assets/6eea241e-be43-4f30-834e-e1ca12dc6a84" />
 
 Mỗi biến kiểu osThreadId lưu lại địa chỉ của một task trong FreeRTOS.  
+
 Dùng để theo dõi hoặc điều khiển task (xóa, tạm dừng, v.v.).
 # Bước 2 : Tạo các task 
 <img width="818" height="280" alt="image" src="https://github.com/user-attachments/assets/4a06f7d6-7317-44be-8bf3-e159625154e4" />
