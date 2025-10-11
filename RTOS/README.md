@@ -70,7 +70,7 @@ int main(void)
 
 ---
 
-### 4️⃣ Cấu hình Clock
+###  Cấu hình Clock
 ```c
 PLL Source: HSE (8MHz) × 9 = 72 MHz
 ```
