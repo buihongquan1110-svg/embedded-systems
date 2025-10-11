@@ -16,7 +16,7 @@ Dự án chạy trên **vi điều khiển STM32F103C8T6** (board Blue Pill), d�
 
 ---
 
-## ⚙️ Cấu trúc chương trình
+##  Cấu trúc chương trình
 ###  File chính: `main.c`
 ```c
 #include "main.h"
