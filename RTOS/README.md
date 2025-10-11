@@ -1,6 +1,6 @@
-# 🧩 FreeRTOS LED Blinking – STM32F103C8T6
+#  FreeRTOS LED Blinking – STM32F103C8T6
 
-## 🎯 Mục tiêu
+##  Mục tiêu
 Tạo chương trình sử dụng **FreeRTOS** để điều khiển **3 LED** nhấp nháy ở **3 tần số khác nhau**:
 - LED1 → 3 Hz  
 - LED2 → 10 Hz  
@@ -11,7 +11,7 @@ Dự án chạy trên **vi điều khiển STM32F103C8T6** (board Blue Pill), d�
 ---
 
 ## ⚙️ Cấu trúc chương trình
-### 1️⃣ File chính: `main.c`
+###  File chính: `main.c`
 ```c
 #include "main.h"
 #include "cmsis_os.h"
@@ -21,7 +21,7 @@ Dự án chạy trên **vi điều khiển STM32F103C8T6** (board Blue Pill), d�
 
 ---
 
-### 2️⃣ Khai báo các task
+###  Khai báo các task
 ```c
 osThreadId defaultTaskHandle;
 osThreadId myTask02Handle;
@@ -32,7 +32,7 @@ osThreadId myTask04Handle;
 
 ---
 
-### 3️⃣ Hàm `main()`
+###  Hàm `main()`
 ```c
 int main(void)
 {
@@ -73,7 +73,7 @@ PLL Source: HSE (8MHz) × 9 = 72 MHz
 
 ---
 
-### 5️⃣ Cấu hình GPIO
+###  Cấu hình GPIO
 ```c
 __HAL_RCC_GPIOA_CLK_ENABLE();
 GPIO_InitStruct.Pin = GPIO_PIN_0|GPIO_PIN_1|GPIO_PIN_2;
@@ -85,7 +85,7 @@ HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
 ---
 
-## 🧠 Các Task LED
+##  Các Task LED
 
 | Task | GPIO | Tần số nháy | Chu kỳ (ms) | Delay (ms) | Ưu tiên |
 |------|------|--------------|--------------|-------------|----------|
@@ -93,7 +93,7 @@ HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 | Task03 | PA1 | 10 Hz | 100 | 50 | Normal |
 | Task04 | PA2 | 25 Hz | 40 | 20 | Above Normal |
 
-### 🔹 Task 1 – LED1 (3 Hz)
+###  Task 1 – LED1 (3 Hz)
 ```c
 void StartTask02(void const * argument)
 {
@@ -105,7 +105,7 @@ void StartTask02(void const * argument)
 }
 ```
 
-### 🔹 Task 2 – LED2 (10 Hz)
+###  Task 2 – LED2 (10 Hz)
 ```c
 void StartTask03(void const * argument)
 {
@@ -117,7 +117,7 @@ void StartTask03(void const * argument)
 }
 ```
 
-### 🔹 Task 3 – LED3 (25 Hz)
+###  Task 3 – LED3 (25 Hz)
 ```c
 void StartTask04(void const * argument)
 {
@@ -131,7 +131,7 @@ void StartTask04(void const * argument)
 
 ---
 
-## 🚨 Error Handler
+##  Error Handler
 ```c
 void Error_Handler(void)
 {
@@ -141,6 +141,8 @@ void Error_Handler(void)
 ```
 - Nếu có lỗi clock hoặc khởi tạo, MCU sẽ dừng tại đây để debug.
 
----
+--- 
+
+Link demo : https://drive.google.com/drive/folders/1w8cnU9DQ1xKz-TAU9YofK58A3ijTHfu3?usp=drive_link
 
 
