@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UVProject>
+  <Targets>
+    <Target>
+      <TargetName>RTOS_LED</TargetName>
+      <TargetOption>
+        <TargetCommonOption>
+          <DeviceName>STM32F103C8</DeviceName>
+        </TargetCommonOption>
+      </TargetOption>
+    </Target>
+  </Targets>
+</UVProject>
