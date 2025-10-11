@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UVOpt>
+  <TargetOption>
+    <TargetCommonOption>
+      <Run>
+        <LoadDLL>ST-Link Debugger</LoadDLL>
+      </Run>
+    </TargetCommonOption>
+  </TargetOption>
+</UVOpt>
