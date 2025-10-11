@@ -143,19 +143,4 @@ void Error_Handler(void)
 
 ---
 
-## 💬 Gợi ý mở rộng
-- Tạo **1 task duy nhất** và truyền tham số (GPIO, tần số) để giảm trùng code.  
-- Dùng **vTaskDelayUntil()** để điều khiển nháy chính xác hơn.  
-- Thêm UART hoặc LCD để hiển thị trạng thái từng task.  
 
----
-
-## 🧾 Tóm tắt
-Dự án này minh họa cách tạo **nhiều task FreeRTOS song song**, điều khiển LED với tần số khác nhau bằng **vTaskDelay()**.  
-Mỗi LED là một task độc lập, giúp làm quen với cơ chế **lập lịch ưu tiên và đa nhiệm** của FreeRTOS.
-
----
-
-✍️ *Tác giả: ManhLong*  
-📅 *Ngày tạo: Tháng 10 / 2025*  
-💡 *Môi trường: Keil uVision + STM32CubeMX + FreeRTOS*
