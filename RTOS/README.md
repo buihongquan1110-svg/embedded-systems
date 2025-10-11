@@ -1,52 +1,161 @@
-# BÀI TẬP VỀ RTOS MÔN HỆ THỐNG NHÚNG CỦA PTIT.
-# Tạo một project FreeRTOS.
-# Viết 1 chương trình sử dụng FreeRTOS thực hiện:
-# Nhấp nháy 3 LED ở 3 tần số khác nhau: 3Hz, 10Hz và 25Hz.
-# 1,Sử dụng 3 hàm độc lập cho 3 tác vụ.
-# 2,Nâng cao (Không bắt buộc): Viết 1 hàm tác vụ duy nhất và truyền vào tham số để thay đổi chân nháy LED, tần số nháy.
-# Lưu ý sử dụng: vTaskDelay hoặc vTaskUntil.
-## Mô tả
-Dự án này sử dụng FreeRTOS để điều khiển 3 LED nhấp nháy ở 3 tần số khác nhau:
+# 🧩 FreeRTOS LED Blinking – STM32F103C8T6
 
-LED1: 3 Hz → nhấp nháy mỗi ~166 ms
+## 🎯 Mục tiêu
+Tạo chương trình sử dụng **FreeRTOS** để điều khiển **3 LED** nhấp nháy ở **3 tần số khác nhau**:
+- LED1 → 3 Hz  
+- LED2 → 10 Hz  
+- LED3 → 25 Hz  
 
-LED2: 10 Hz → nhấp nháy mỗi ~50 ms
+Dự án chạy trên **vi điều khiển STM32F103C8T6** (board Blue Pill), dùng **Keil uVision** và **HAL + FreeRTOS (CMSIS-RTOS)**.
 
-LED3: 25 Hz → nhấp nháy mỗi ~20 ms
+---
 
-Vi điều khiển: STM32F103C8T6
-IDE: Keil uVision
-Thư viện: HAL + CMSIS-RTOS v1 (FreeRTOS)
+## ⚙️ Cấu trúc chương trình
+### 1️⃣ File chính: `main.c`
+```c
+#include "main.h"
+#include "cmsis_os.h"
+```
+- `main.h`: khai báo hàm, chân LED, hàm khởi tạo.  
+- `cmsis_os.h`: cung cấp API FreeRTOS (osThreadDef, osDelay, vTaskDelay...).
 
-## Thông tin phần cứng
-- MCU: STM32F103C8T6
-- Clock: HSE 8 MHz, PLL x9 → 72 MHz
-- LED1: PA0
-- LED2: PA1
-- LED3: PA2
+---
 
-## Các bước thực hiện 
-# Bước 1 : Khai báo các Task-handle và prototype 
-<img width="940" height="113" alt="image" src="https://github.com/user-attachments/assets/31241ca0-fb13-4f66-9f6a-42fce6db2bbe" />
-<img width="930" height="165" alt="image" src="https://github.com/user-attachments/assets/6eea241e-be43-4f30-834e-e1ca12dc6a84" />
+### 2️⃣ Khai báo các task
+```c
+osThreadId defaultTaskHandle;
+osThreadId myTask02Handle;
+osThreadId myTask03Handle;
+osThreadId myTask04Handle;
+```
+- Mỗi `osThreadId` lưu thông tin của một task đang chạy.  
 
--Mỗi biến kiểu osThreadId lưu lại địa chỉ của một task trong FreeRTOS.  
+---
 
--Dùng để theo dõi hoặc điều khiển task (xóa, tạm dừng, v.v.).
-# Bước 2 : Tạo các task 
-<img width="818" height="280" alt="image" src="https://github.com/user-attachments/assets/4a06f7d6-7317-44be-8bf3-e159625154e4" />  
+### 3️⃣ Hàm `main()`
+```c
+int main(void)
+{
+  HAL_Init();
+  SystemClock_Config();
+  MX_GPIO_Init();
+```
+- Khởi tạo HAL, clock hệ thống, và GPIO cho LED.  
 
--osThreadDef(): định nghĩa một task, gồm tên, hàm, độ ưu tiên, stack size.  
+#### ➤ Tạo các task:
+```c
+  osThreadDef(myTask02, StartTask02, osPriorityBelowNormal, 0, 128);
+  myTask02Handle = osThreadCreate(osThread(myTask02), NULL);
 
--osThreadCreate(): tạo và đưa task vào trạng thái sẵn sàng .
+  osThreadDef(myTask03, StartTask03, osPriorityNormal, 0, 128);
+  myTask03Handle = osThreadCreate(osThread(myTask03), NULL);
 
-<img width="380" height="75" alt="image" src="https://github.com/user-attachments/assets/61216279-92cd-4cab-9cb8-e2f9c88d37a9" />
+  osThreadDef(myTask04, StartTask04, osPriorityAboveNormal, 0, 128);
+  myTask04Handle = osThreadCreate(osThread(myTask04), NULL);
+```
+- Mỗi task điều khiển một LED riêng biệt.  
+- Độ ưu tiên tăng dần: Task02 < Task03 < Task04.  
 
--Khởi động FreeRTOS Scheduler, chuyển quyền điều khiển cho các task.
+#### ➤ Bắt đầu Scheduler:
+```c
+  osKernelStart();
+```
+- Kích hoạt bộ lập lịch FreeRTOS, CPU bắt đầu quản lý task song song.  
 
+---
 
+### 4️⃣ Cấu hình Clock
+```c
+PLL Source: HSE (8MHz) × 9 = 72 MHz
+```
+- Cấu hình chuẩn cho STM32F103C8T6.  
+- Đảm bảo FreeRTOS tick chạy chính xác.  
 
+---
 
-## Lưu ý
-- FreeRTOSConfig.h KHÔNG được include trong package theo yêu cầu. Bạn cần thêm file FreeRTOSConfig.h phù hợp (với config for STM32F1) vào MDK/ trước khi build.
-- Thay thế startup & system file bằng file chính thức từ CubeMX/Keil để build chuẩn.
+### 5️⃣ Cấu hình GPIO
+```c
+__HAL_RCC_GPIOA_CLK_ENABLE();
+GPIO_InitStruct.Pin = GPIO_PIN_0|GPIO_PIN_1|GPIO_PIN_2;
+GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+```
+- 3 chân LED: **PA0**, **PA1**, **PA2**.  
+- Output Push-Pull, tốc độ thấp, không kéo lên/xuống.
+
+---
+
+## 🧠 Các Task LED
+
+| Task | GPIO | Tần số nháy | Chu kỳ (ms) | Delay (ms) | Ưu tiên |
+|------|------|--------------|--------------|-------------|----------|
+| Task02 | PA0 | 3 Hz | 333 | 166 | Below Normal |
+| Task03 | PA1 | 10 Hz | 100 | 50 | Normal |
+| Task04 | PA2 | 25 Hz | 40 | 20 | Above Normal |
+
+### 🔹 Task 1 – LED1 (3 Hz)
+```c
+void StartTask02(void const * argument)
+{
+  for(;;)
+  {
+    HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_0);
+    vTaskDelay(pdMS_TO_TICKS(166));
+  }
+}
+```
+
+### 🔹 Task 2 – LED2 (10 Hz)
+```c
+void StartTask03(void const * argument)
+{
+  for(;;)
+  {
+    HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_1);
+    vTaskDelay(pdMS_TO_TICKS(50));
+  }
+}
+```
+
+### 🔹 Task 3 – LED3 (25 Hz)
+```c
+void StartTask04(void const * argument)
+{
+  for(;;)
+  {
+    HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_2);
+    vTaskDelay(pdMS_TO_TICKS(20));
+  }
+}
+```
+
+---
+
+## 🚨 Error Handler
+```c
+void Error_Handler(void)
+{
+  __disable_irq();
+  while (1) {}
+}
+```
+- Nếu có lỗi clock hoặc khởi tạo, MCU sẽ dừng tại đây để debug.
+
+---
+
+## 💬 Gợi ý mở rộng
+- Tạo **1 task duy nhất** và truyền tham số (GPIO, tần số) để giảm trùng code.  
+- Dùng **vTaskDelayUntil()** để điều khiển nháy chính xác hơn.  
+- Thêm UART hoặc LCD để hiển thị trạng thái từng task.  
+
+---
+
+## 🧾 Tóm tắt
+Dự án này minh họa cách tạo **nhiều task FreeRTOS song song**, điều khiển LED với tần số khác nhau bằng **vTaskDelay()**.  
+Mỗi LED là một task độc lập, giúp làm quen với cơ chế **lập lịch ưu tiên và đa nhiệm** của FreeRTOS.
+
+---
+
+✍️ *Tác giả: ManhLong*  
+📅 *Ngày tạo: Tháng 10 / 2025*  
+💡 *Môi trường: Keil uVision + STM32CubeMX + FreeRTOS*
