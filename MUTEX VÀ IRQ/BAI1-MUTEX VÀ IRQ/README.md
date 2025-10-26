@@ -54,7 +54,9 @@
 - Giúp ta biết chương trình rơi vào lỗi hệ thống hoặc cấu hình sai.
 
 # BƯỚC 8: Hàm main().
-<img width="811" height="423" alt="image" src="https://github.com/user-attachments/assets/852827fa-6aac-4f5c-8915-e970d9223141" />
+<img width="811" height="423" alt="image" src="https://github.com/user-attachments/assets/852827fa-6aac-4f5c-8915-e970d9223141" 
+
+Link demo: https://drive.google.com/drive/folders/1MBCOStp4t8a50iFe8yq0WLrAa3eZrCKR
 
 
 
