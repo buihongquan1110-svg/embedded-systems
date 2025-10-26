@@ -75,11 +75,23 @@ Giải thích:
 <img width="828" height="124" alt="image" src="https://github.com/user-attachments/assets/cc65aba0-a440-43b3-8b85-051bb1a556a5" />
 
 # 7. Kết quả.
+
+
 `"=== UART WITH MUTEX Demo ==="`
+
+
 `"aaaaa"`
+
+
 `"bbbbb"`
+
+
 `"aaaaa"`
+
+
 `"bbbbb"`
+
+
 `"..."`
 
 - Không bị lỗi xen ký tự (do mutex bảo vệ UART).
