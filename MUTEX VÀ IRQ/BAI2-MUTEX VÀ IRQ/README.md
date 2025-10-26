@@ -54,6 +54,7 @@
 `"..."`
 - Giải thích: vì 2 task gọi HAL_UART_Transmit() xen kẽ mà không có khóa (mutex), nên byte từ task này và task khác có thể chen vào buffer/tổ hợp gửi, dẫn tới chuỗi không nguyên vẹn.
 
+Link demo: https://drive.google.com/drive/folders/1GqHqXt9bZ6MqQfjhCj9kQR6_-nny0Tz6
 
 
 
