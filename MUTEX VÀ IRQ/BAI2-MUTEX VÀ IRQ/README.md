@@ -10,7 +10,8 @@
 - Giải thích: giữ cấu trúc hệ thống, tránh chiếm CPU quá mức.
 
 # 3. Task gửi `"aaaaa\r\n"` theo từng ký tự.
-<img width="946" height="277" alt="image" src="https://github.com/user-attachments/assets/fd88e5b6-2d7c-431c-80d3-1c11777efd4b" 
+<img width="890" height="292" alt="image" src="https://github.com/user-attachments/assets/4b7e69c2-76cc-4a53-9f19-7f235ac914da" />
+
 - Gửi từng byte (không gửi nguyên chuỗi) giúp dễ thấy hiện tượng xen kẽ.
 
 - osDelay(50) làm cho task cho CPU nhường chỗ — tạo cơ hội Task03 xen vào.
@@ -18,7 +19,8 @@
 - HAL_MAX_DELAY cho hàm UART block tới khi byte được đưa vào HAL driver. Tùy driver/CMSIS, nếu HAL UART dùng interrupt/DMA, byte sẽ được gửi ra buffer và hàm return nhanh; tuy nhiên trong ví dụ này mục tiêu là minh họa chia sẻ tài nguyên không an toàn.
 
 # 4. Task gửi `"bbbb\r\n"` theo từng ký tự.
-<img width="918" height="268" alt="image" src="https://github.com/user-attachments/assets/28f1105f-5a45-413d-8238-bb3c2c921219" 
+<img width="899" height="267" alt="image" src="https://github.com/user-attachments/assets/b65dd0aa-fdf7-4154-a6b5-3e0ca382ddb2" />
+
 
 - Giải thích: tương tự Task02 nhưng gửi ký tự b — khi chạy cùng lúc, kết quả trên terminal sẽ bị xen kẽ.
 
@@ -31,11 +33,22 @@
 # 7. Kết quả mong đợi.
 - Khi chạy, bạn sẽ thấy chuỗi trên terminal bị xen kẽ — ví dụ:
 
+
 `"=== UART No Mutex Demo ==="`
+
+
 `"ababab"`
+
+
 `"aababb"`
+
+
 `"aaabbb"~
+
+
 `"ababb"`
+
+
 `"..."`
 - Giải thích: vì 2 task gọi HAL_UART_Transmit() xen kẽ mà không có khóa (mutex), nên byte từ task này và task khác có thể chen vào buffer/tổ hợp gửi, dẫn tới chuỗi không nguyên vẹn.
 
