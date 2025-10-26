@@ -45,8 +45,17 @@
 <img width="791" height="642" alt="image" src="https://github.com/user-attachments/assets/4fffcd9e-968b-4c61-b499-8ae3ffd183a4" />
 
 | Chân | Chức năng     | Cấu hình                       | Ghi chú           |
+
+
+
 | PA0  | LED Warning   | Output                         | Dùng trong Task 2 |
+
+
+
 | PA1  | Button        | Input (Interrupt Falling Edge) | Gây ngắt ngoài    |
+
+
+
 | PA5  | LED Heartbeat | Output                         | Dùng trong Task 1 |
 
 
