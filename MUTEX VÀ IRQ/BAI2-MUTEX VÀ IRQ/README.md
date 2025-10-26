@@ -7,6 +7,8 @@
 
 # 2. Task mặc định(không làm gì).
 <img width="616" height="174" alt="image" src="https://github.com/user-attachments/assets/bb795668-d866-47c1-83b0-0d96ebcf205e" />
+
+
 - Giải thích: giữ cấu trúc hệ thống, tránh chiếm CPU quá mức.
 
 # 3. Task gửi `"aaaaa\r\n"` theo từng ký tự.
