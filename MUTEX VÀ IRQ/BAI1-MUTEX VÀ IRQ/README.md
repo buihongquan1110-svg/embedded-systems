@@ -44,19 +44,17 @@
 # BƯỚC 6: Cấu hình GPIO & NVIC.
 <img width="791" height="642" alt="image" src="https://github.com/user-attachments/assets/4fffcd9e-968b-4c61-b499-8ae3ffd183a4" />
 
-| Chân | Chức năng     | Cấu hình                       | Ghi chú           |
+<img width="838" height="403" alt="image" src="https://github.com/user-attachments/assets/dc875aaf-1ed2-427f-a653-1ee49d25d42f" />
 
+# BƯỚC 7: Error Handler.
+<img width="605" height="189" alt="image" src="https://github.com/user-attachments/assets/da0a95cf-a926-4c06-9c87-42ec590bf9ba" />
 
+- Nếu xảy ra lỗi, LED PA0 sẽ nhấp nháy liên tục.
 
-| PA0  | LED Warning   | Output                         | Dùng trong Task 2 |
+- Giúp ta biết chương trình rơi vào lỗi hệ thống hoặc cấu hình sai.
 
-
-
-| PA1  | Button        | Input (Interrupt Falling Edge) | Gây ngắt ngoài    |
-
-
-
-| PA5  | LED Heartbeat | Output                         | Dùng trong Task 1 |
+# BƯỚC 8: Hàm main().
+<img width="811" height="423" alt="image" src="https://github.com/user-attachments/assets/852827fa-6aac-4f5c-8915-e970d9223141" />
 
 
 
