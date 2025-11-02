@@ -38,8 +38,14 @@
 # 6. Task chính (Default Task) chạy nền trong FreeRTOS.
  
 # Nhiệm vụ của task:
+
+
 •	Gửi sự kiện EventGroup để điều khiển LED thông qua các task khác
+
+
 •	Tạo hiệu ứng LED bật tuần tự rồi bật đồng loạt
+
+
 •	Tạm dừng (delay) giữa các lần phát sự kiện
  # Lưu ý: Task này không trực tiếp bật LED, mà gửi tín hiệu cho các task LED khác xử lý.
 
